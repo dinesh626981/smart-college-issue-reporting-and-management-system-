@@ -1,75 +1,89 @@
-# Smart College System
+# Smart College Issue Reporting & Management System
 
-A comprehensive college management system featuring a React frontend and a Python (Flask) backend, with integrated AI capabilities for predictive analytics.
+A comprehensive college issue reporting and facility management system featuring a React (Vite) frontend and a Python (Flask) backend, with integrated Google Gemini AI for intelligent categorization, duplicate detection, automated summaries, quality analysis, and real-time alerts.
 
-## Features
-- **Modern Frontend**: Built with React, Vite, and Tailwind CSS for a fast, responsive user interface. Features data visualization using Chart.js.
-- **Robust Backend**: Powered by Flask, SQLAlchemy (ORM), and PyMySQL for robust data handling.
-- **AI Integration**: Powered by Google Gemini AI, offering intelligent complaint categorization, duplicate detection, smart summaries, quality analysis, resolution suggestions, and an interactive chatbot.
-- **Authentication**: JWT-based secure authentication supporting Email or Mobile Number login.
+---
+
+## 🔗 Project & Deployment Links
+
+| Deployment | URL | Status | Description |
+| :--- | :--- | :--- | :--- |
+| **🚀 Vercel Production Dashboard** | [https://frontend-six-gilt-19.vercel.app](https://frontend-six-gilt-19.vercel.app) | `Active` | Live cloud deployment on Vercel CDN |
+| **🌐 Vercel Direct Deployment** | [https://frontend-90h7p5rlk-dinesh626981.vercel.app](https://frontend-90h7p5rlk-dinesh626981.vercel.app) | `Active` | Production build deployment instance |
+| **💻 Localhost Frontend** | [http://localhost:5173](http://localhost:5173) | `Local` | Local Vite development server |
+| **⚙️ Localhost Backend API** | [http://127.0.0.1:5001](http://127.0.0.1:5001) | `Local` | Local Flask REST API service |
+| **📦 GitHub Repository** | [https://github.com/dinesh626981/smart-college-issue-reporting-and-management-system-](https://github.com/dinesh626981/smart-college-issue-reporting-and-management-system-) | `Active` | Source code repository |
+
+---
+
+## ✨ Features
+
+- **Modern Frontend**: Built with React 18, Vite, and Tailwind CSS for a fast, responsive user interface. Features dynamic analytics and status charts powered by Chart.js.
+- **Robust Backend**: Powered by Flask, SQLAlchemy (ORM), and SQLite/MySQL with JWT authentication.
+- **Flexible Authentication**: Supports both **Email Address** and **Mobile Number** login for staff and students with 1-click demo autofill.
+- **Staff Operations & Proof of Work**: Dedicated completed tasks showcase, resolution proof image upload, and direct notification dispatch to administrators upon completion.
 - **Email & Real-Time Notifications**: Integrated with Flask-Mail and in-app Notification Center. Staff work completions directly alert Administrators in real-time.
-- **Staff Operations & Proof of Work**: Dedicated completed tasks showcase, resolution proof image upload, and direct notification dispatch.
+- **AI Integration**: Powered by Google Gemini AI, offering intelligent complaint categorization, duplicate detection, smart summaries, quality analysis, resolution suggestions, and an interactive chatbot.
+- **Role-Based Portals**:
+  - **Student Portal**: Lodge complaints, track status, view notifications, interact with AI assistant.
+  - **Staff Portal**: View assigned complaints, update progress, upload proof of work, track work history.
+  - **Administrator Portal**: System overview, department management, staff assignment, analytics & reports.
 
-## Prerequisites
-To run this project locally, you will need:
-- **Node.js** (v18 or higher recommended)
-- **Python** (v3.9 or higher recommended)
-- **Google Gemini API Key**: Get one from Google AI Studio.
+---
 
-## Installation & Setup
+## 🚀 Local Development Setup
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd smart-college-system
+git clone https://github.com/dinesh626981/smart-college-issue-reporting-and-management-system-.git
+cd smart-college-issue-reporting-and-management-system-
 ```
 
-### 2. Environment Variables
-Create a `.env` file in the `backend/` directory by copying the example:
-```bash
-cp backend/.env.example backend/.env
-```
-Ensure you add your Google Gemini API Key to `.env`:
-```
-GEMINI_API_KEY=your_api_key_here
-```
-
-### 3. Backend Setup
-Navigate to the root directory and use the built-in python executable (or your virtual environment):
-
+### 2. Backend Setup
 ```powershell
-# Install requirements
-python -m pip install -r backend/requirements.txt
+# Install Python dependencies
+pip install -r backend/requirements.txt
+
+# Configure environment variables
+# Copy backend/.env.example to backend/.env and add your GEMINI_API_KEY if using AI features
+copy backend\.env.example backend\.env
 
 # Run the Flask backend
 python -m backend.app
 ```
-The backend will run at `http://127.0.0.1:5001`.
+*Backend runs locally at: `http://127.0.0.1:5001`*
 
-### Default Demo Accounts (Pre-configured)
-You can use the **1-Click Auto-Fill** buttons on the Login page (`/login`) to instantly fill any of these:
-- **Administrator**: `admin@college.com` / `admin123`
-- **Student**: `student@college.com` / `student123`
-- **Department Staff**: `staff@college.com` or `9876543212` / `staff123` (supports Email or Mobile Number login)
-- **Admin Registration**: Accessible via the "Register as Administrator" button on `/login` or `/register?role=admin` (Security Key: `admin123`).
-
-### 4. Frontend Setup
-Navigate to the frontend directory, install dependencies, and start the development server:
-
+### 3. Frontend Setup
 ```powershell
 cd frontend
 
-# Install Node modules
+# Install Node dependencies
 npm install
 
 # Start the Vite development server
 npm run dev
 ```
-The frontend will run at `http://localhost:5173`.
+*Frontend runs locally at: `http://localhost:5173`*
 
-## Technologies Used
-**Frontend**: React, Vite, Tailwind CSS, React Router, Chart.js, Axios
-**Backend**: Python, Flask, SQLAlchemy, PyMySQL, PyJWT, Google Generative AI (Gemini)
+---
 
-## Contributing
-Feel free to submit issues or pull requests to improve the system.
+## 👥 Default Demo Credentials
+
+You can use the **1-Click Auto-Fill** buttons on the Login page (`/login`) to instantly sign in:
+
+| Role | Login Identifier | Password | Access Details |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin@college.com` | `admin123` | Full administrative control & analytics |
+| **Department Staff** | `staff@college.com` or `9876543212` | `staff123` | Assigned complaints & completion workflow |
+| **Student** | `student@college.com` | `student123` | Raise & track campus issues |
+
+*Admin Registration is also available at `/register?role=admin` using Security Key: `admin123`.*
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: React 18, Vite, Tailwind CSS, React Router v6, Chart.js, Axios, React Icons, React Toastify
+- **Backend**: Python 3, Flask, Flask-SQLAlchemy, Flask-CORS, Flask-Mail, PyJWT, Werkzeug
+- **AI & Analytics**: Google Generative AI (Gemini Pro), Predictive analytics algorithms
+- **Hosting & Deployment**: Vercel (Edge CDN & Frontend Hosting), GitHub Actions CI/CD
